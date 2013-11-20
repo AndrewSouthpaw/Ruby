@@ -1,11 +1,26 @@
 
-class Hello
+class A
+  def m1
+    34
+  end
 
-  def my_first_method
-    puts "Hello, World!"
+  def m2 (x,y)
+    z = 7
+    if x > y
+      false
+    else
+      x + y * z
+    end
   end
 
 end
+    
+class B
+  def m1
+    4
+  end
 
-x = Hello.new
-x.my_first_method
+  def m3 x
+    x.abs * 2 + self.m1
+  end
+end
