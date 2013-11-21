@@ -1,0 +1,168 @@
+[ruby1.9.3-with-tk]  Starting Wed Nov 20 22:27:52 CET 2013
+
+======================================================================
+
+This script for Mac OS X tries to install ruby 1.9.3 with tk 8.5:
+  * The installation (including homebrew) will be entirely self-contained
+    and will not affect any tools you have installed already.
+  * It will modify .bash_profile if you ask it to.
+  * It will install in /Users/andrewsouthpaw/ruby1.9.3-with-tk and create a log in install-ruby1.9.3-with-tk.sh.log
+  * Renaming or moving /Users/andrewsouthpaw/ruby1.9.3-with-tk might break ruby.
+  * To uninstall, delete /Users/andrewsouthpaw/ruby1.9.3-with-tk
+  * To install elsewhere, run:
+      bash install-ruby1.9.3-with-tk.sh "elsewhere"
+
+======================================================================
+
+[ruby1.9.3-with-tk]  1. Check Mac OS X.  [start]
+Darwin asmithmacbook.local 11.4.2 Darwin Kernel Version 11.4.2: Thu Aug 23 16:25:48 PDT 2012; root:xnu-1699.32.7~1/RELEASE_X86_64 x86_64
+[ruby1.9.3-with-tk]  This script should work on this version of Mac OS X.  Hit RETURN to continue or Control-C to cancel.[ruby1.9.3-with-tk]  1. Check Mac OS X.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  2. Check for Xcode commmand line tools.  [start]
+i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+Copyright (C) 2007 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[ruby1.9.3-with-tk]  2. Check for Xcode commmand line tools.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  3. Check for Tcl/Tk.  [start]
+Found /System/Library/Frameworks/Tk.framework/Versions/8.5
+[ruby1.9.3-with-tk]  3. Check for Tcl/Tk.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  4. Create /Users/andrewsouthpaw/ruby1.9.3-with-tk.  [start]
+total 0
+drwxr-xr-x  2 andrewsouthpaw  staff    68B Nov 20 22:28 bin
+drwxr-xr-x  2 andrewsouthpaw  staff    68B Nov 20 22:28 homebrew
+[ruby1.9.3-with-tk]  4. Create /Users/andrewsouthpaw/ruby1.9.3-with-tk.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  5. Download homebrew to /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew.  [start]
+[ruby1.9.3-with-tk]  5. Download homebrew to /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  6. Check homebrew.  [start]
+0.9.5
+[ruby1.9.3-with-tk]  6. Check homebrew.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  7. Tap alternate ruby versions.  [start]
+Cloning into '/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Library/Taps/homebrew-versions'...
+Tapped 122 formula
+[ruby1.9.3-with-tk]  7. Tap alternate ruby versions.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  8. Install ruby.  This will take a while.  [start]
+==> Installing dependencies for ruby193: pkg-config, readline, gdbm, libyaml
+==> Installing ruby193 dependency: pkg-config
+==> Downloading http://pkgconfig.freedesktop.org/releases/pkg-config-0.28.tar.gz
+==> ./configure --prefix=/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/pkg-config/0.28 --disable-host-tool --with-internal-glib --with-pc-path=/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/lib/pkgconfig:/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Library/ENV/pkgconfig/10.7
+==> make
+==> make check
+==> make install
+🍺  /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/pkg-config/0.28: 10 files, 644K, built in 114 seconds
+==> Installing ruby193 dependency: readline
+==> Downloading https://downloads.sf.net/project/machomebrew/Bottles/readline-6.2.4.lion.bottle.1.tar.gz
+==> Pouring readline-6.2.4.lion.bottle.1.tar.gz
+==> Caveats
+This formula is keg-only, so it was not symlinked into /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew.
+
+OS X provides the BSD libedit library, which shadows libreadline.
+In order to prevent conflicts when programs look for libreadline we are
+defaulting this GNU Readline installation to keg-only.
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/opt/readline/lib
+    CPPFLAGS: -I/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/opt/readline/include
+
+==> Summary
+🍺  /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/readline/6.2.4: 31 files, 1.6M
+==> Installing ruby193 dependency: gdbm
+==> Downloading http://ftpmirror.gnu.org/gdbm/gdbm-1.10.tar.gz
+==> ./configure --prefix=/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/gdbm/1.10 --mandir=/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/gdbm/1.10/share/man --infodir=/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/gdbm/1.10/share/info
+==> make install
+🍺  /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/gdbm/1.10: 11 files, 240K, built in 20 seconds
+==> Installing ruby193 dependency: libyaml
+==> Downloading http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz
+==> ./configure --prefix=/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/libyaml/0.1.4
+==> make install
+🍺  /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/libyaml/0.1.4: 7 files, 340K, built in 21 seconds
+==> Installing ruby193
+==> Downloading http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p448.tar.bz2
+==> ./configure --prefix=/Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/ruby193/1.9.3-p448 --enable-shared --disable-tcltk-framework --with-out-ext=tcl --with-out-ext=tk --disable-install-doc
+==> make
+==> make install
+==> Caveats
+NOTE: By default, gem installed binaries will be placed into:
+  /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/opt/ruby193/bin
+
+You may want to add this to your PATH.
+==> Summary
+🍺  /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/Cellar/ruby193/1.9.3-p448: 785 files, 17M, built in 5.0 minutes
+[ruby1.9.3-with-tk]  8. Install ruby.  This will take a while.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  9. Check ruby.  [start]
+ruby 1.9.3p448 (2013-06-27 revision 41675) [x86_64-darwin11.4.2]
+[ruby1.9.3-with-tk]  9. Check ruby.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  10. Install ruby/tk bindings for /System/Library/Frameworks/Tk.framework/Versions/8.5.  This could take a while.  [start]
+Building native extensions.  This could take a while...
+Successfully installed tk_as_gem-0.1.0
+1 gem installed
+Installing ri documentation for tk_as_gem-0.1.0...
+Installing RDoc documentation for tk_as_gem-0.1.0...
+[ruby1.9.3-with-tk]  10. Install ruby/tk bindings for /System/Library/Frameworks/Tk.framework/Versions/8.5.  This could take a while.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  11. Check ruby/tk.  [start]
+Success.
+[ruby1.9.3-with-tk]  11. Check ruby/tk.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  12. Create symlinks in /Users/andrewsouthpaw/ruby1.9.3-with-tk/bin.  [start]
+total 24
+lrwxr-xr-x  1 andrewsouthpaw  staff    56B Nov 20 22:40 gem -> /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/bin/gem
+lrwxr-xr-x  1 andrewsouthpaw  staff    56B Nov 20 22:40 irb -> /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/bin/irb
+lrwxr-xr-x  1 andrewsouthpaw  staff    57B Nov 20 22:40 ruby -> /Users/andrewsouthpaw/ruby1.9.3-with-tk/homebrew/bin/ruby
+[ruby1.9.3-with-tk]  12. Create symlinks in /Users/andrewsouthpaw/ruby1.9.3-with-tk/bin.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  13. Configure environment.  [start]
+
+Do you want to use this version of ruby by default?
+(The command 'ruby' would run this version of ruby.)
+Type 'yes' or 'no', then RETURN [default = no]:  
+Edited /Users/andrewsouthpaw/.bash_profile to add ruby/irb/gem to the PATH for future shells.
+Run 'source /Users/andrewsouthpaw/ruby1.9.3-with-tk/paths' to get this in the current shell.
+
+Do you also want this version of ruby aliased as 'ruby-tk'?
+(The command 'ruby-tk' would run this version of ruby.)
+Type 'yes' or 'no', then RETURN [default = no]:  
+Leaving aliases alone.  If you change your mind later, rerun this script.
+                        It will skip straight to this step.
+
+[ruby1.9.3-with-tk]  13. Configure environment.  [done]
+
+======================================================================
+
+[ruby1.9.3-with-tk]  14. Start using ruby with tk!  [start]
