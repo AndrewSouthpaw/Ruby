@@ -1,16 +1,26 @@
-# empty hash {}
-h1 = {}
-h1["a"] = "Found A"
-h1[false] = "Found false"
-h1 => {"a"=>"Found A", false=>"Found false"}
-h1[42] => nil
-h1.keys => {"a", false}
-h1.values => {"Found A", "Found false"}
-h2 = {"SML"=>1, "Racket"=>2, "Ruby"=>3}
-h2.size => 3
-h2.each {|k,v| print k; print ": "; puts v}
-# symbols:   :foo
 
-# ranges
-1..1000000 => 1..1000000  # super fast!  It's an object.
-(1..100).inject {|acc,elt| acc + elt}	=> 5050
+class Point
+  attr_accessor :x, :y # defines methods x, y, x=, y=
+
+  def initialize(x,y)
+    @x = x
+    @y = y
+  end
+  def distFromOrigin
+    Math.sqrt(@x * @x + @y * @y) # uses ivars
+  end
+  def distFromOrigin2
+    Math.sqrt(x * x + y * y) # uses getter methods
+  end
+
+end
+
+class ColorPoint < Point
+  attr_accessor :color
+
+  def initialize(x,y,c="clear")
+    super(x,y) #keyword super calls same method in superclass
+    @color = c
+  end
+end
+
