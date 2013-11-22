@@ -1,61 +1,33 @@
-
-class Point
-  attr_accessor :x, :y # defines methods x, y, x=, y=
-
-  def initialize(x,y)
-    @x = x
-    @y = y
+class A
+  def even x
+    puts "in even A "
+    if x==0 then true else odd(x-1) end
   end
-  def distFromOrigin
-    Math.sqrt(@x * @x + @y * @y) # uses ivars
-  end
-  def distFromOrigin2
-    Math.sqrt(x * x + y * y) # uses getter methods
-  end
-
-end
-
-class ThreeDPoint < Point
-  attr_accessor :z
-
-  def initialize(x,y,z)
-    super(x,y)
-    @z = z
-  end
-  def distFromOrigin
-    d = super
-    Math.sqrt(d * d + @z * @z)
-  end
-  def distFromOrigin2
-    d = super
-    Math.sqrt(d * d + z * z)
+  def odd x
+    puts "in odd A "
+    if x==0 then false else even(x-1) end
   end
 end
 
-class PolarPoint < Point
-  # by not calling super cons, no x and y ivars
-  # In Java/C# would just have unused x, y fields
-  def initialize(r,theta)
-    @r = r
-    @theta = theta
-  end
-  def x
-    @r * Math.cos(@theta)
-  end
-  def y
-    @r * Math.sin(@theta)
-  end
-  def x= a
-    b = y
-    @theta = ...
-    @r = ()
-    self
-  end
-  def y= b
-  end
-  def distFromOrigin
-    @r
-  end
-  # inherited distFromOrigin2 works as is!
-  # because self.x and self.y (called in super) point to methods in subclass. Whoa.
+a1 = A.new.odd 7
+puts "a1 is " + a1.to_s + "\n\n"
 
+class B < A
+  def even x # changes B's odd too! (good)
+    puts "in even B "
+    x % 2 == 0
+  end
+end
+
+class C < A
+  def even x
+    puts "in even C " # changes C's odd too! (bad)
+    false
+  end
+end
+
+a2 = B.new.odd 7
+puts "a2 is " + a2.to_s + "\n\n"
+
+a3 = C.new.odd 7
+puts "a3 is " + a3.to_s + "\n\n"
